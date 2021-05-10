@@ -5,10 +5,11 @@ import { IconButton } from "@material-ui/core";
 import Image from "next/image";
 import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col justify-center h-screen items-center">
       <Head>
         <title>Google</title>
         <link rel="icon" href="" />
@@ -27,7 +28,7 @@ export default function Home() {
           <Avatar url="https://images.unsplash.com/photo-1620062868782-100e41142be3?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
         </div>
       </header>
-      <form className="flex flex-col items-center mt-44 flex-grow ">
+      <form className="flex flex-col items-center mt-44 flex-grow w-4/5">
         <Image
           src="https://www.google.co.uk/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
           width={300}
@@ -42,11 +43,12 @@ export default function Home() {
           <input className=" focus:outline-none flex-grow" />
           <MicIcon className="text-gray-700" />
         </div>
-        <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
+        <div className="flex flex-col w-1/2 space-y-5 justify-center mt-8 mb-5 sm:space-y-0 sm:flex-row sm:space-x-4 ">
           <button className="btn">Google Search</button>
           <button className="btn">I'm Feeling Lucky</button>
         </div>
       </form>
+      <Footer />
     </div>
   );
 }
