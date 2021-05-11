@@ -6,12 +6,22 @@ import Image from "next/image";
 import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
 import Footer from "../components/Footer";
+import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const input = useRef(null);
+  const search = (e) => {
+    e.preventDefault();
+    const term = input.current.value;
+    console.log(term);
+    router.push(`/search?term=${term}`);
+  };
   return (
     <div className="flex flex-col justify-center h-screen items-center">
       <Head>
-        <title>Google</title>
+        <title>New Tab</title>
         <link rel="icon" href="" />
       </Head>
       <header className="flex w-full  p-5 justify-between text-sm text-gray-700">
@@ -22,7 +32,7 @@ export default function Home() {
         <div className="flex space-x-4 items-center">
           <p className="link">Gmail</p>
           <p className="link">Image</p>
-          <IconButton className="border-none">
+          <IconButton className=" focus:outline-none">
             <AppsIcon />
           </IconButton>
           <Avatar url="https://images.unsplash.com/photo-1620062868782-100e41142be3?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
@@ -40,12 +50,16 @@ export default function Home() {
          sm:max-w-xl lg:max-w-2xl "
         >
           <SearchIcon className="text-gray-700 mr-3" />
-          <input className=" focus:outline-none flex-grow" />
+          <input ref={input} className=" focus:outline-none flex-grow" />
           <MicIcon className="text-gray-700" />
         </div>
-        <div className="flex flex-col w-1/2 space-y-5 justify-center mt-8 mb-5 sm:space-y-0 sm:flex-row sm:space-x-4 ">
-          <button className="btn">Google Search</button>
-          <button className="btn">I'm Feeling Lucky</button>
+        <div className="flex flex-col w-1/2 space-y-5 justify-center mt-8  sm:space-y-0 sm:flex-row sm:space-x-4 ">
+          <button className="btn" onClick={search}>
+            Google Search
+          </button>
+          <button className="btn" onClick={search}>
+            I'm Feeling Lucky
+          </button>
         </div>
       </form>
       <Footer />
