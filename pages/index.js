@@ -50,7 +50,7 @@ export default function Home() {
          sm:max-w-xl lg:max-w-2xl "
         >
           <SearchIcon className="text-gray-700 mr-3" />
-          <input ref={input} className=" focus:outline-none flex-grow" />
+          <input ref={input} className=" focus:outline-none flex-grow " />
           <MicIcon className="text-gray-700" />
         </div>
         <div className="flex flex-col w-1/2 space-y-5 justify-center mt-8  sm:space-y-0 sm:flex-row sm:space-x-4 ">
@@ -62,7 +62,6 @@ export default function Home() {
           </button>
         </div>
       </form>
-      <Footer />
     </div>
   );
 }
