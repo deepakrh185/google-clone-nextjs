@@ -17,7 +17,7 @@ function Header() {
     const term = searchInput.current.value;
     if (!term) return;
     console.log(term);
-    router.push(`search?term=${term}`);
+    router.push(`/search?term=${term}`);
   };
   return (
     <header>
@@ -37,6 +37,7 @@ function Header() {
             type="text"
             className="flex-grow w-full focus:outline-none"
             ref={searchInput}
+            defaultValue={router.query.term}
           />
           <ClearIcon
             className="text-gray-500 sm:mr-3 cursor-pointer transition duration-100 transform hover:scale-125"
