@@ -54,7 +54,7 @@ function Header() {
           </Hidden>
         </form>
         <Avatar
-          url="https://images.unsplash.com/photo-1620062868782-100e41142be3?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1Mnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        url="https://avatars.githubusercontent.com/u/71048565?v=4"
           className="mr-auto"
         />
       </div>
